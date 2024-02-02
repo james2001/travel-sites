@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{# <html lang="{{ app.request.locale|split('_')[0] }}"> #}
+<html lang="fr">
+{# <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block meta %}
+        {% include "@SuluWebsite/Extension/seo.html.twig" with {
+            "seo": extension.seo|default([]),
+            "content": content|default([]),
+            "localizations": localizations|default([]),
+            "shadowBaseLocale": shadowBaseLocale|default(),
+        } %}
+    {% endblock %}
+
+    {% block style %}{% endblock %}
+</head> #}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>{% block title %}Travel Advantage Avis - Découvrez les Retours et Expériences{% endblock %}</title>
+     <link href="{{ asset('css/output.css') }}" rel="stylesheet">
+    <meta name="description" content="Explorez les avis et témoignages sur Travel Advantage. Découvrez comment Travel Advantage transforme 
+        les voyages de ses membres avec des offres uniques.">
+    {% block meta %}
+        {% include "@SuluWebsite/Extension/seo.html.twig" with {
+            "seo": extension.seo|default([]),
+            "content": content|default([]),
+            "localizations": localizations|default([]),
+            "shadowBaseLocale": shadowBaseLocale|default(),
+        } %}
+    {% endblock %}
+    <link rel="canonical" href="https://travel-advantage-avis.com">
+    <link rel="icon" href="{{ asset('images/cropped-ta_logo-32x32.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('images/cropped-ta_logo-192x192.png') }}" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ asset('images/cropped-ta_logo-180x180.png') }}">
+    {% block style %}{% endblock %}
+</head>
+<body class="bg-gray-100">
+    <header class="flex justify-center items-center">
+        {% block header %}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ sulu_content_root_path() }}">Homepage</a>
+                    </li>
+
+                    {% for item in sulu_navigation_root_tree('main') %}
+                        <li>
+                            <a href="{{ sulu_content_path(item.url, item.webspaceKey) }}"
+                               title="{{ item.title }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endblock %}
+    </header>
+    {#
+    <form action="{{ path('sulu_search.website_search') }}" method="GET">
+        <input name="q" type="text" placeholder="Search"/>
+        <input type="submit" value="Go"/>
+    </form>
+    #}
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+
+
+    <footer class="text-white bg-blue-500 p-4">
+        {% block footer %}
+            <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+        {% endblock %}
+    </footer>
+
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
