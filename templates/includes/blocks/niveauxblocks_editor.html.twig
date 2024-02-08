@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center md:flex-row md:items-start py-4">
+    
+    {% if content.niveauximages is defined and content.niveauximages|length > 0 %}
+        <div class="image-gallery">
+            {% for image in content.niveauximages %}
+                <img class="mx-auto" src="{{ image.thumbnails['sulu-400x400-inset'] }}" alt="{{ image.title }}" title="{{ image.description|default(image.title) }}">
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <div>
+        {% if content.niveauxdesc is defined %}
+            {{ content.niveauxdesc|raw }}
+        {% endif %}
+        
+        {% if content.buttontitle is defined %}
+             
+             <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center mt-2" href="{{ content.buttonlink|raw }}" target="_blank" >
+                {{ content.buttontitle|raw }}
+            </a>
+        {% endif %}
+
+    </div>
+ </div>

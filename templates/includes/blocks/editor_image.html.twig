@@ -1,0 +1,14 @@
+<div class="editor-image-block">
+    
+    {% if content.columnheading is defined %}
+        <div class="article-content">
+            <h2 class="text-2xl font-bold">{{ content.columnheading|raw }}</h2>
+        </div>
+    {% endif %}
+
+    {% if content.articledesc is defined %}
+        <div class="article-content">
+            {{ content.articledesc|raw }}
+        </div>
+    {% endif %}
+</div>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {# <html lang="{{ app.request.locale|split('_')[0] }}"> #}
 <html lang="fr">
+{% set snippets = sulu_snippet_load_by_area('default') %}
 {# <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,6 +43,15 @@
 <body class="bg-gray-100">
     <header class="flex justify-center items-center">
         {% block header %}
+            {% set logoImageUrl = null %}
+            {% if snippets is not empty and snippets.content.logoimages is defined %}
+                {# Get the URL of the logo image #}
+                {% set logoImageUrl = snippets.content.logoimages.getUrl() %}
+            {% endif %}
+            
+            <img title="Travel Advantage" alt="Travel Advantage" width="160" height="70" src="{{ logoImageUrl|default("asset('images/logo.webp')") }}" class="py-2" /> 
+           
+            {#
             <nav>
                 <ul>
                     <li>
@@ -56,6 +66,8 @@
                     {% endfor %}
                 </ul>
             </nav>
+            #}
+            
         {% endblock %}
     </header>
     {#
@@ -74,7 +86,15 @@
 
     <footer class="text-white bg-blue-500 p-4">
         {% block footer %}
-            <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+
+            {% set defaultCopyrightText = null %}
+            {% set defaultSnippet = snippets %}
+            {# Check if 'content' key and 'title' key are defined in the snippet #}
+            {% if defaultSnippet is not null and defaultSnippet.content is defined and defaultSnippet.content.copyright_text is defined %}
+                {% set defaultCopyrightText = defaultSnippet.content.copyright_text %}
+            {% endif %}
+           <p class="mx-auto">© {{ 'now'|date('Y') }}  {{ defaultCopyrightText|default("travel-advantage-avis® | Site créé par un groupe d'entrepreneurs indépendants, membres de Travel Advantage et MWR Life.")|raw }}</p>
+
         {% endblock %}
     </footer>
 

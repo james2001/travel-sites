@@ -42,5 +42,308 @@
                 <title lang="de">Artikel</title>
             </meta>
         </property>
+        <property name="maintitle" type="text_line">
+            <meta>
+                <title lang="en"> Main Title</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+        </property>
+        <!-- Section 1 : Bienvenue chez Travel Advantage -->
+         <section name="sectiononecontents">
+            <meta>
+                <title lang="en">Section One</title>
+            </meta>
+
+            <properties>
+                <property name="sectiononetitle" type="text_line">
+                    <meta>
+                        <title lang="en">Section 1 Titel 1</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+                <property name="sectiononecontent" type="text_editor">
+                    <meta>
+                        <title lang="en">Section 1 Contents 1</title>
+                    </meta>
+                </property>
+
+                <!-- sss -->
+                <property name="sectiononetitle2" type="text_line">
+                    <meta>
+                        <title lang="en">Section 1 Titel 2</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+                <property name="sectiononecontent2" type="text_editor">
+                    <meta>
+                        <title lang="en">Section 1 Contents 2</title>
+                    </meta>
+                </property>
+                
+                <property name="btnurl" type="url">
+                    <meta>
+                        <title lang="en">Voir les Avis URL</title>
+                    </meta>
+                </property>
+                <property name="btntext" type="text_line">
+                    <meta>
+                        <title lang="en">Voir les Avis Text</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+                
+            </properties>
+            <!-- ... -->
+        </section>
+        <block name="blocks" default-type="editor_image" minOccurs="0" maxOccurs="3">
+            <meta>
+                <title lang="de">Update Title and Content</title>
+                <title lang="en">Update Title and Content</title>
+            </meta>
+
+            <params>
+                <param name="add_button_text">
+                    <meta>
+                        <title lang="en">Add Column</title>
+                        <title lang="de">Column hinzufügen</title>
+                    </meta>
+                </param>
+            </params>
+
+            <types>
+                <type name="editor_image">
+                    <meta>
+                        <title lang="de">Editor with title and content</title>
+                        <title lang="en">Editor with title and content</title>
+                    </meta>
+
+                    <properties>
+                        <!-- <property name="images" type="media_selection" colspan="3">
+                            <meta>
+                                <title lang="de">Bilder</title>
+                                <title lang="en">Images</title>
+                            </meta>
+
+                            <tag name="sulu.block_preview" priority="512"/>
+                        </property> -->
+                        <property name="columnheading" type="text_area" colspan="3">
+                            <meta>
+                                <title lang="en">Title</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="512"/>
+                        </property>
+                        <property name="articledesc" type="text_editor" colspan="9">
+                            <meta>
+                                <title lang="de">Description</title>
+                                <title lang="en">Description</title>
+                            </meta>
+
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+        <section name="Témoignages Section">
+            <meta>
+                <title lang="en">Section Témoignages</title>
+            </meta>
+
+            <properties>
+                <property name="témoignagessectiontitle" type="text_area">
+                    <meta>
+                        <title lang="en">Main Ttile</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+                <property name="témoignagessectionocontent" type="text_editor">
+                    <meta>
+                        <title lang="en">Content</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+            </properties>
+        </section>
+        <block name="témoignagesblocks" default-type="témoignagesblocks_editor" minOccurs="0" maxOccurs="3">
+                <meta>
+                    <title lang="de">Update Title and Content</title>
+                    <title lang="en">Update Title and Content</title>
+                </meta>
+                <params>
+                    <param name="add_button_text">
+                        <meta>
+                            <title lang="en">Add Column</title>
+                            <title lang="de">Column hinzufügen</title>
+                        </meta>
+                    </param>
+                </params>
+
+                <types>
+                    <type name="témoignagesblocks_editor">
+                        <meta>
+                            <title lang="de">Editor with title and content</title>
+                            <title lang="en">Editor with title and content</title>
+                        </meta>
+
+                        <properties>
+                            <property name="images" type="media_selection" colspan="3">
+                                <meta>
+                                    <title lang="de">Bilder</title>
+                                    <title lang="en">Images</title>
+                                </meta>
+
+                                <tag name="sulu.block_preview" priority="512"/>
+                            </property>
+                            <property name="témoignagesdesc" type="text_editor" colspan="9">
+                                <meta>
+                                    <title lang="de">Description</title>
+                                    <title lang="en">Description</title>
+                                </meta>
+
+                                <tag name="sulu.block_preview" priority="1024"/>
+                            </property>
+                        </properties>
+                    </type>
+                </types>
+            </block>
+
+        <section name="Niveaux Section">
+            <meta>
+                <title lang="en">Section Niveaux</title>
+            </meta>
+
+            <properties>
+                <property name="niveauxsectiontitle" type="text_area">
+                    <meta>
+                        <title lang="en">Main Ttile</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+                <property name="niveauxsectionocontent" type="text_editor">
+                    <meta>
+                        <title lang="en">Content</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+                </property>
+            </properties>
+        </section>
+
+        <block name="niveauxblocks" default-type="niveauxblocks_editor" minOccurs="0" maxOccurs="3">
+            <meta>
+                <title lang="de">Update Title and Content</title>
+                <title lang="en">Update Title and Content</title>
+            </meta>
+            <params>
+                <param name="add_button_text">
+                    <meta>
+                        <title lang="en">Add Column</title>
+                        <title lang="de">Column hinzufügen</title>
+                    </meta>
+                </param>
+            </params>
+
+            <types>
+                <type name="niveauxblocks_editor">
+                    <meta>
+                        <title lang="de">Editor with title and content</title>
+                        <title lang="en">Editor with title and content</title>
+                    </meta>
+
+                    <properties>
+                        <property name="niveauximages" type="media_selection" colspan="3">
+                            <meta>
+                                <title lang="de">Bilder</title>
+                                <title lang="en">Images</title>
+                            </meta>
+
+                            <tag name="sulu.block_preview" priority="512"/>
+                        </property>
+                        <property name="niveauxdesc" type="text_editor" colspan="9">
+                            <meta>
+                                <title lang="de">Description</title>
+                                <title lang="en">Description</title>
+                            </meta>
+
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                       
+                        <property name="buttonlink" type="url">
+                            <meta>
+                                <title lang="en">Button URL</title>
+                            </meta>
+                        </property>
+                        <property name="buttontitle" type="text_line">
+                            <meta>
+                                <title lang="en">Button Ttile</title>
+                            </meta>
+                            <params>
+                                <param name="headline" value="true"/>
+                            </params>
+                        </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+
+        
+        <block name="blocks6" default-type="editor_image6" minOccurs="0" maxOccurs="4">
+            <meta>
+                <title lang="de">Update Section 6 and below contents</title>
+                <title lang="en">Update Section 6 and below contents</title>
+            </meta>
+
+            <params>
+                <param name="add_button_text">
+                    <meta>
+                        <title lang="en">Add Column</title>
+                        <title lang="de">Column hinzufügen</title>
+                    </meta>
+                </param>
+            </params>
+
+            <types>
+                <type name="editor_image6">
+                    <meta>
+                        <title lang="de">Editor with title and content</title>
+                        <title lang="en">Editor with title and content</title>
+                    </meta>
+
+                    <properties>
+                        
+                        <property name="columnheading6" type="text_area" colspan="3">
+                            <meta>
+                                <title lang="en">Title</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="512"/>
+                        </property>
+                        <property name="articledesc6" type="text_editor" colspan="9">
+                            <meta>
+                                <title lang="de">Description</title>
+                                <title lang="en">Description</title>
+                            </meta>
+
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+
     </properties>
 </template>

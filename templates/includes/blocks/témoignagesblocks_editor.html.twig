@@ -1,0 +1,16 @@
+ <blockquote class="flex flex-col md:flex-row items-center py-4
+                            lg:w-1/2 w-full">
+    
+    {% if content.images is defined and content.images|length > 0 %}
+        <div class="image-gallery">
+            {% for image in content.images %}
+                <img class="mx-auto rounded-full mr-4" src="{{ image.thumbnails['sulu-400x400-inset'] }}" alt="{{ image.title }}" title="{{ image.description|default(image.title) }}">
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if content.témoignagesdesc is defined %}
+            {{ content.témoignagesdesc|raw }}
+    {% endif %}
+
+ </blockquote>
